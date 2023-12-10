@@ -1,17 +1,14 @@
+import React, {useState} from 'react'
 
-import React, { useState } from "react";
-import './../styles/App.css';
-
-const App = () => {
+let CounterApp = ()=> {
   let [greet, setGreet] = useState("");
-  // h
   return (
     <div>
         <p>Enter your name:</p>
-        <input type="text" onChange ={(e)=> setGreet(`Hello ${e.target.value}!`)}/>
-        <div>{greet}</div>
+        <input type="text" onChange ={(e)=> setGreet(e.target.value)}/>
+        {greet ? <p>Hello {greet}!</p>: ""}
     </div>
   )
 }
 
-export default App
+export default CounterApp;
